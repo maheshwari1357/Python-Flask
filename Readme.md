@@ -124,3 +124,46 @@ This document provides an overview of common questions and answers related to mi
 ---
 
 Save this file as `README.md` in your repository for easy access and documentation. 
+
+
+# REST API with Spring Boot - Key Annotations and Concepts
+
+This document provides an overview of REST APIs and essential Spring annotations used for building them.
+
+---
+
+## What is a REST API?
+
+A **REST API** (Representational State Transfer) is an architectural style that uses HTTP methods (GET, POST, PUT, DELETE) to interact with resources, which are typically represented as URLs. REST is stateless, meaning each client request is independent and contains all necessary information for the server to process it.
+
+---
+
+## Key Spring Annotations for REST APIs
+
+### 1. `@RestController`
+Marks a class as a REST controller, enabling it to handle HTTP requests and return JSON or XML responses.
+
+### 2. `@RequestMapping`, `@GetMapping`, `@PostMapping`, etc.
+These annotations map HTTP requests to specific controller methods:
+- `@RequestMapping`: A general annotation for mapping requests to specific URLs and can specify the HTTP method type.
+- `@GetMapping`, `@PostMapping`, `@PutMapping`, `@DeleteMapping`: Shorthand annotations for mapping specific HTTP methods.
+
+### 3. `@RequestBody`
+Used to map the body of the HTTP request to a method parameter. This is typically used when passing a JSON object in the body of a request, especially in POST or PUT requests.
+
+### 4. `@PathVariable`
+Extracts values from the URI. It is commonly used to capture values embedded in the URL, allowing you to identify resources based on their unique identifiers.
+
+### 5. `@RequestParam`
+Extracts query parameters from the URL. This is useful for optional parameters or filters that aren't part of the main URI path.
+
+### 6. `@ResponseStatus`
+Sets the HTTP status code for a method response, indicating the result of the operation (e.g., success, created, not found).
+
+### 7. `@ExceptionHandler`
+Defines custom exception handling logic within a controller, allowing you to return appropriate responses when errors occur.
+
+---
+
+This document serves as a quick reference for understanding the core concepts and annotations related to REST APIs in Spring Boot. Use this information to guide the development of robust and scalable RESTful services.
+
